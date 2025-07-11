@@ -1,0 +1,58 @@
+li{
+    font-weight: 700;
+    font-size: 32px;
+}
+.html{
+    color: #cf5225;
+    font-size:  32px;;
+}
+.css{
+    color: #2298d8;
+}
+.JS{
+    color: #f6d234;
+}
+.React{
+    color: #69d4df;
+}
+.Tailwind{
+    color: aquamarine;
+}
+/* #html{
+    font-size: 64px;
+}
+#CSS{
+    font-size: 64px;
+}
+#JS{
+    font-size: 64px;
+}
+#React{
+    font-size: 64px;
+}
+#Tailwind{
+    font-size: 64px;
+} */
+ [class]{
+    background-color: #416b6d;
+ }
+[Khushal="procoder"]{
+    background-color: #b0dfe1;
+    font-size: 19px;
+    color: #2298d8;
+}
+[Khushal="coder"]{
+    background-color: green;
+}
+ul p {
+    background-color: #69d4df;
+}
+h1:hover{
+    color: blue;
+}
+p:hover{
+    color: rgb(57, 14, 175);
+}
+ul p:hover{
+    color: orangered;
+}
