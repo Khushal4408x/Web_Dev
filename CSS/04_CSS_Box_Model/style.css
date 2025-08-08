@@ -1,0 +1,38 @@
+*{
+    box-sizing: border-box;
+}
+.parent{
+   background-color: rgb(255, 255, 255);
+}
+.one{
+    background-color: aqua;
+    width: 300px;
+    color: blue;
+    /* word-break: break-all; */
+    padding: 25px;
+    border: 10px solid teal;
+    border-radius: 25px;
+    margin: 40px;
+    
+}
+body{
+    margin: 0px ;
+}
+
+
+.two{
+    background: linear-gradient(to top,yellow, orange,red);
+    width: 300px;
+    height: 300px;
+    padding: 25px;
+    outline: 10px solid rgb(23, 244, 23);
+    border: 10px solid rgb(246, 81, 4);
+    border-radius:50%;
+    margin: 40px;
+    overflow: hidden; 
+} 
+img{
+    width: 100%;
+    margin-top: 10px;
+    margin-right: 10px;
+}

@@ -1,0 +1,14 @@
+body{
+    margin: 0px;
+}
+.box{
+    background-color: chartreuse;
+    max-width: 50% ;
+    
+
+}
+section{
+    max-width: 50%;padding: 20px;
+    background-color: rgb(1, 234, 227);
+    
+}

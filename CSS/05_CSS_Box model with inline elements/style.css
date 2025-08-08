@@ -1,0 +1,30 @@
+
+body{
+    margin: 0;
+}
+.inline-block{
+    background-color: orangered;
+    display:block;
+}
+.html {
+     display: inline-block; 
+    background-color: cadetblue;
+    width: 70px; 
+    height: 80px;
+    padding: 5px;
+    border: 15px solid pink; 
+    margin: 20px;
+}
+img{
+    width: 300px;
+    background-color: rgb(64, 75, 36);
+    padding: 30px;
+    border: 20px solid rgb(158, 126, 143);
+}
+iframe{
+    margin: 39px  ;
+}
+video{
+    width: 480px;
+
+}
