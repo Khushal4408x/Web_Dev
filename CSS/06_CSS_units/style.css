@@ -1,15 +1,28 @@
+ html{/*:root selector bhi html ko select karta hai  */
+    font-size: 10px;
+}
 body{
     margin: 0px;
+    /* font-size: 2em; */
 }
-.box{
-    background-color: chartreuse;
-    max-width: 50% ;
-    padding: 10%;
-    font-size: 200%;
-}
+
 section{
-    max-width: 200px;padding: 10%;
-    background-color: rgb(1, 234, 227);
-    border: 19px solid green;
+   
+    background-color: rgb(1, 234, 227); 
+    width: 50vw;
+   
+    margin: 10vw ;
+    border: 1vw solid blue;
+    font-size: 2rem;
+    /* max-width: 200px;padding: 10%;
+    border: 19px solid green; */
+    
+}.box{
+    background-color: chartreuse;
+    padding: .5em;
+    width: 5em;
+    /* box-sizing: border-box; */
+     font-size: 3em;/*jab tak font size em me declared nahi thi tab tak 1em upar se inherit ho rha tha. Jab ham font size in em current element me 
+    declare kar dete hai tab 1em =font size wala em. font size wala em will inherit from parent.  */
     
 }

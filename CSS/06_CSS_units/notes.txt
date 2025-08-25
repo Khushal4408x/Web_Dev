@@ -1,0 +1,2 @@
+em inherits from parent 
+rem inherits from html or root
