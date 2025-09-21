@@ -1,0 +1,30 @@
+body{
+    background-color: black;
+}
+.container{
+    display: grid;
+    height: 800px;
+    width: 800px;
+    grid-template-rows: 1fr 2fr 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+.Box{
+    background-color: rgb(121, 54, 245) ;
+}
+.Header{
+    grid-column-start: 1;
+    grid-column-end:4 ;
+}
+.Sidebar{
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+.content1{
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+.Footer{
+     grid-column-start: 1;
+    grid-column-end:4 ;
+}
