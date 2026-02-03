@@ -1,0 +1,20 @@
+.container{
+    height:400px;
+    width: 400px;
+    font-size: 50px;
+    background-color: aqua;}
+/* mobile first approach me default top pe hoga so that default css 
+gets transferd to phones and hence reducing load */
+
+@media screen and (max-width:900px){
+    .container{
+        background-color: orange;
+        font-size: 60px;
+    }
+}
+@media screen and (max-width:600px){
+    .container{
+        background-color: rgb(255, 0, 153);
+        font-size: 60px;
+    }
+}

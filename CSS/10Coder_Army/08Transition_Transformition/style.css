@@ -1,0 +1,46 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+.container{
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;gap: 20px;
+    perspective: 800px;
+    
+    
+}
+@keyframes rotate {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.box{
+    height: 150px;
+    width: 150px;
+    background-color: orange;
+    cursor: pointer;
+    animation-name: rotate;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    
+    /* transform: rotate(30deg);
+    transition-property: all;
+    transition-timing-function: ease-in; */
+    /* transition-duration: 3s; */
+    /* transition-delay: 1s; */
+    
+}
+/* .box:hover{
+  /* height: 300px;
+    background-color: purple; 
+    transform:rotate(40deg);
+} */
