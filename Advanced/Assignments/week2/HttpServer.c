@@ -38,7 +38,7 @@ int main() {
         printf("Client message: %s\n", buffer);  // Print client's message
         
         // Respond to the client
-        char *response = "HTTP/1.1 200 OK\nContent-Type: text/plain\nContent-Length: 12\n\nHello world!";
+        char *response = " Hello world!";
         write(new_socket, response, strlen(response));
         
         // Step 6: Close the client connection (Four-way handshake)
