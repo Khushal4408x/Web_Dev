@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>sdaf HTML DOM</h2>
+<div id="div1">
+    <p id="p1">this is 1st paragraph</p>
+    <p id ="p2">this is another para</p>
+</div>
+<p>Paragraph Text: Displaying document.documentElement</p>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = document.documentElement;
+const para=document.createElement("p");
+para.innerHTML="this is a paragraph";
+document.getElementById("demo").appendChild(para)
+const parent=document.getElementById("div1");
+const child=document.getElementById("p1");
+parent.removeChild(child);
+</script>
+
+</body>
+</html>
