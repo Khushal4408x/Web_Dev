@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .grandparent{
+           width: 200px;
+           height: 200px;
+           background-color: red;
+        }
+        .parent{
+            width: 150px;
+           height: 150px;
+           background-color: rgb(4, 0, 255);
+        }
+        .child{
+           width: 100px;
+           height: 100px;
+           background-color: rgb(17, 255, 0);
+        }
+    </style>
+</head>
+<body>
+    <div class="grandparent">
+        <div class="parent">
+            <div class="child"></div>
+        </div>
+    </div>
+    <script>
+        const grandparent=document.querySelector('.grandparent');
+        const parent=document.querySelector('.parent');
+        const child=document.querySelector('.child');
+        
+    grandparent.addEventListener('click',e=>{
+        console.log('grandpar1 bubble');
+    },)
+     grandparent.addEventListener('click',e=>{
+        console.log('grandpar1 capture');
+    },{capture:true})
+
+
+     parent.addEventListener('click',e=>{
+        console.log('parent2 bubble');
+    })
+    parent.addEventListener('click',e=>{
+        console.log('parent2 captuer');
+    },{capture:true})
+
+
+    child.addEventListener('click',e=>{
+        console.log('child3 bubble'); 
+       e.stopPropagation();//AFTER THIS NO PROPAGATION EVERYTHING WILL STOP AFTER THIS FUNCT CALL ENDS
+        
+    })
+    child.addEventListener('click',printhi)//if we used anonymouse function in place of named funct, we would'nt be getting desired output since those two functions will be different
+    setTimeout(() => {
+        child.removeEventListener('click',printhi)
+    }, 2000);
+    child.addEventListener('click',e=>{
+        console.log('child3 capture');
+    },{capture:true})
+    function printhi()
+{
+    console.log('hi');
+}
+
+    </script>
+</body>
+</html>
