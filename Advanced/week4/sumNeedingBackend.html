@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <script>
+       async function populateDiv(){
+            const a=document.getElementById("firstnum").value;
+            const b=document.getElementById("secnum").value;
+
+            await fetch("http://localhost:3000/?a="+a+"&b="+b).then(function(response){
+                console.log(response.text());
+            })
+            .then(function(ans){
+                document.getElementById("finalSum").innerHTML=ans;
+            })
+        }
+    </script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="firstnum" type="text" placeholder="first num"> <br>
+    <input id="secnum" type="text" placeholder="sec num">  <br>  
+    <button onclick="populateDiv()">Calc Sum</button>
+    <div id="finalSum"></div>
+    <!-- oninput event listner can also be 
+    used -->
+</body>
+</html>
