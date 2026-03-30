@@ -8,5 +8,5 @@ app.get('/',function(req,res){
     const a=req.query.a;
     const b=req.query.b;
     res.send(parseInt(a)+parseInt(b));
-})
+}) 
 app.listen(port)

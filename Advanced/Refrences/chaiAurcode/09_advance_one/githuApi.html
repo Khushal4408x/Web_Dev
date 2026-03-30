@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    body{
+         display: grid;
+        place-items: center;
+    }
+    #card {
+    background-color: aqua;
+    height: 670px;
+    width: 500px;
+    border-radius: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+    img {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid white;
+}
+    #username {
+    font-size: 28px;
+    font-weight: bold;
+    color: #0a0a0a;
+    margin-top: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+#followers {
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    display: inline-block;
+}
+</style>
+<body>
+    <div id="card">
+        
+
+        <p id="username">
+
+        </p>
+        <p id="followers">
+
+        </p>
+    </div>
+</body>
+<script>
+    const reqUrl='https://api.github.com/users/khushal4408x'
+    const xhr=new XMLHttpRequest();
+    
+    xhr.open('GET',reqUrl);
+    xhr.send();
+    xhr.onreadystatechange=function(){
+        if(xhr.readyState===4){
+            const data=JSON.parse(this.responseText); 
+            var maker=document.getElementById('card')
+            var image=document.createElement('img');
+            console.log(data.avatar_url);
+            image.src=data.avatar_url;
+            maker.appendChild(image);
+            const username=document.getElementById('username')
+            const followers=document.getElementById('followers')
+            username.innerHTML=data.login;
+            followers.innerHTML="followers ===>  "+data.followers;
+            
+        }
+    }
+</script>
+</html>

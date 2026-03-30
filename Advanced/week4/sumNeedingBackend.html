@@ -6,12 +6,16 @@
             const a=document.getElementById("firstnum").value;
             const b=document.getElementById("secnum").value;
 
-            await fetch("http://localhost:3000/?a="+a+"&b="+b).then(function(response){
-                console.log(response.text());
+             fetch("http://localhost:3000/?a="+a+"&b="+b).then(function(response){
+                // console.log(response.text());
+                    response.text()
+                    .then(function(ans){
+                        console.log(ans)
+                    })
             })
-            .then(function(ans){
-                document.getElementById("finalSum").innerHTML=ans;
-            })
+            // .thdocument.getElementById("finalSum").innerHTML=ans;en(function(ans){
+            //     document.getElementById("finalSum").innerHTML=ans;
+            // })
         }
     </script>
 <head>
