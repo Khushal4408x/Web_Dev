@@ -2,21 +2,41 @@
 <!DOCTYPE html>
 <html lang="en">
     <script>
-       async function populateDiv(){
+        let timeout;
+        function debouncePopulateDiv(){
+            //delay the call to populateDiv until i ve not been called for 100ms
+            //and I've been called atleast once
+
+            //how do u cancel a clock?? Because if debounce got called again you have to reset the current running clock
+            //cancel a clock by using clearTimeout
+            clearTimeout(timeout);//from prev funct in the stack 
+            timeout=setTimeout(function(){
+                populateDiv()
+            },10000) //wait till 10 seconds (generally 100 miliseconds in real world scenario) if debouncePopulatediv called again during those 10 sec reset the clock
+            
+
+        }
+        function populateDiv(){
             const a=document.getElementById("firstnum").value;
             const b=document.getElementById("secnum").value;
 
              fetch("http://localhost:3000/?a="+a+"&b="+b).then(function(response){
-                // console.log(response.text());
+                // console.log(response);
                     response.text()
                     .then(function(ans){
-                        console.log(ans)
+                        console.log(ans) ;   document.getElementById("finalSum").innerHTML=ans;
                     })
             })
-            // .thdocument.getElementById("finalSum").innerHTML=ans;en(function(ans){
-            //     document.getElementById("finalSum").innerHTML=ans;
-            // })
         }
+        // async function populateDiv2() {
+        //     const a=document.getElementById("firstnum").value;
+        //     const b=document.getElementById("secnum").value;
+
+        //     const response=await fetch("http://localhost:3000/?a="+a+"&b="+b)
+        //     const ans=await response.txt();
+        //     document.getElementById("finalSum").innerHTML=ans;
+        // }
+
     </script>
 <head>
     <meta charset="UTF-8">
@@ -24,11 +44,11 @@
     <title>Document</title>
 </head>
 <body>
-    <input id="firstnum" type="text" placeholder="first num"> <br>
-    <input id="secnum" type="text" placeholder="sec num">  <br>  
+    <input  oninput="debouncePopulateDiv()"  id="firstnum" type="text" placeholder="first num"> <br>
+    <input  oninput="debouncePopulateDiv()"  id="secnum" type="text" placeholder="sec num">  <br>  
     <button onclick="populateDiv()">Calc Sum</button>
     <div id="finalSum"></div>
-    <!-- oninput event listner can also be 
+    <!-- oninput event listner can also be /Sepereate button can also b used
     used -->
 </body>
 </html>
