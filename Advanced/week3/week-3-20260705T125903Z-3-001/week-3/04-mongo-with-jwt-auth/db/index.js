@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
 const { type } = require('node:os');
-
+require ("dotenv").config();
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://khushalabcd:4jA7Yve2JdPYdrqt@cluster0.oisg2n6.mongodb.net/course_sellingApp');
+const uri=process.env.mongodb;
+mongoose.connect(uri).then(()=>console.log("Db connected"));
 
 // Define schemas
 const AdminSchema = new mongoose.Schema({
