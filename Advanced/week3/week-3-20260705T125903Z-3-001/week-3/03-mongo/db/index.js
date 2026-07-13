@@ -13,7 +13,7 @@ const AdminSchema = new mongoose.Schema({
 
 const UserSchema = new mongoose.Schema({
     // Schema definition here
-     username:String,
+    username:String,
     password:String,
     purchasedCourses:[
         {
