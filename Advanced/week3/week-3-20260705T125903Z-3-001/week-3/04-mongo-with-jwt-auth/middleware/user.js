@@ -1,4 +1,4 @@
-const JWT_SECERET=require("../index")
+const {JWT_SECRET}=require("../config")
 const jwt=require("jsonwebtoken")
 function userMiddleware(req, res, next) {
     // Implement user auth logic
