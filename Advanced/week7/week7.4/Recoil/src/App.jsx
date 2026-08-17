@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import { RecoilRoot, useRecoilValue } from 'recoil'
-import { jobsAtom, messagingAtom, networkAtom,totalNotificationCountAtom, notificationAtom } from './atom'
+import { notifications ,totalNotificationCountSelector} from './atom'
 
 function App() {
   return <RecoilRoot>
@@ -11,12 +11,15 @@ function App() {
 }
 
 function MainApp(){
-    const networkNotificationCount=useRecoilValue(networkAtom)
-    const messageCount=useRecoilValue(messagingAtom)
-    const jobsAtomCount=useRecoilValue(jobsAtom)
-    const notificationAtomCount=useRecoilValue(notificationAtom)
+    const networkNotificationCount=(useRecoilValue(notifications)).network
+    console.log(networkNotificationCount)
+    const messageCount=(useRecoilValue(notifications)).messaging
+    const jobsAtomCount=(useRecoilValue(notifications)).jobs
+    const notificationAtomCount=(useRecoilValue(notifications)).notifications
+    
     // const totalNotificationCoun=usememo and add all the above vars  or WE CAN USE SELECTORS
-    const totalNotificationCnt=useRecoilValue(totalNotificationCountAtom)
+    const totalNotificationCnt=useRecoilValue(totalNotificationCountSelector)//this is better
+    //if another var in future depends on above var then selector will give advantage
   return (
     <>
       <button>Home</button>
