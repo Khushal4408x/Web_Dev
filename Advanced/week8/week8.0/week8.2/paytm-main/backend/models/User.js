@@ -8,5 +8,12 @@ const userSchema=new Schema({
     lastName:String,
 
 })
+
+userSchema.virtual('accounts',{
+    ref:'Acount',
+    localField:'_id',
+    foreignField:'userId'
+})
+
 const User=mongoose.model("User",userSchema)
 export default User 
