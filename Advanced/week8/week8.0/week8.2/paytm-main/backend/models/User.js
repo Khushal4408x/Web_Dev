@@ -10,7 +10,7 @@ const userSchema=new Schema({
 })
 
 userSchema.virtual('accounts',{
-    ref:'Acount',
+    ref:'Account',
     localField:'_id',
     foreignField:'userId'
 })

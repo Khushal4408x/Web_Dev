@@ -1,6 +1,7 @@
 import express from 'express'
 import { z } from "zod"
 import User from '../models/User.js';
+import Account from '../models/Acount.js';
 import JWT_SECRET from '../config.js';
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs"
@@ -48,6 +49,7 @@ userRouter.post("/signup", async (req, res) => {
     const user = await User.create({
         username, password:hashedPassword, firstName, lastName
     });
+    await Account.create({userId:user._id,balance:Math.random()*10000});
     const token = jwt.sign(
         {
         userId: user._id

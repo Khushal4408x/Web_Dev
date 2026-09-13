@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import User from "./User.js";
-import { success, validate } from "zod";
+
 const accountSchema = new mongoose.Schema({
     userId: {
         type: mongoose.Schema.Types.ObjectId,
