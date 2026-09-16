@@ -1,5 +1,5 @@
 
-export default function Input({ label, type, placeholder }) {
+export default function Input({ label, type, placeholder ,onChange}) {
     return (
         <div className="flex items-center my-4">
             <div className="w-24 pr-2">
@@ -9,6 +9,7 @@ export default function Input({ label, type, placeholder }) {
             </div>
 
             <input
+                onChange={onChange}
                 className="
                     w-64
                     px-3

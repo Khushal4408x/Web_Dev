@@ -1,6 +1,7 @@
-export default function Mybutton({ label }) {
+export default function Mybutton({ label , onClick }) {
     return (
         <button
+            onClick={onClick}
             className="
                 w-full
                 bg-slate-800

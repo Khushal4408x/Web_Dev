@@ -9,13 +9,15 @@ import Signup from "./pages/signup.jsx"
 import Dashboard from "./pages/dashboard.jsx"
 import SendMoney from "./pages/sendMoney.jsx"
 import Appbar from "./components/appbar.jsx"
+import Balancebar from "./components/balancebar.jsx"
+import Users from "./components/users.jsx"
 
 
   function App() {
 
     return (
       <BrowserRouter>
-      <Appbar></Appbar>
+     
         <Routes>
           <Route path="/signin" element={<Signin></Signin>}/>
 
