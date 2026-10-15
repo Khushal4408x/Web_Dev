@@ -133,6 +133,7 @@ userRouter.put("/update",authMiddleware,async (req,res)=>{
 
 userRouter.get("/search",async (req,res)=>{
     const query=req.query.q?.trim();
+    
     if(!query){
         return res.status(400).json({
             message:"Search query is required"
@@ -163,6 +164,8 @@ userRouter.get("/search",async (req,res)=>{
        ]
         
     }).select("-password").limit(20);
+    console.log("query: " , query)
+    console.log("Users:",users)
     res.json({
         user:users.map(user=>({
             username:user.username,
@@ -172,5 +175,55 @@ userRouter.get("/search",async (req,res)=>{
         }))
     })
 })
+
+userRouter.get("/bulk",async(req,res)=>{
+    try {
+        const page=Number(req.query.page ?? 1);
+        const limit=Number(req.query.limit ?? 20);
+        if(
+            !Number.isSafeInteger(page)||
+            !Number.isSafeInteger(limit)||
+            page<1||
+            limit<1||
+            limit>100
+        ){
+            return res.status(400).json({
+                message:"Page must be +ve and limit must be between 1 and 100"
+            });
+        }
+        const skip=(page-1)*limit;
+        const [users,total]=await Promise.all([
+            User.find({})
+                .select("-password")
+                .skip(skip)
+                .limit(limit),
+            
+            User.countDocuments({})
+
+        ]);
+        console.log(users);
+        res.json({
+            users: users.map(user=>({
+                _id:user._id,
+                username:user.username,
+                firstName: user.firstName,
+                lastName:user.lastName
+            })),
+            pagination:{
+                currentPage:page,
+                totalPages:Math.ceil(total/limit),
+                totalUsers:total,
+                hasMore:skip+users.length < total
+            }
+        });
+    } catch (error) {
+        console.error("Error fetching users:",error);
+
+        res.status(500).json({
+            message:"Error fetching users"
+        });
+    }
+}
+)
 
 export default userRouter
