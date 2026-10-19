@@ -11,11 +11,13 @@ import SendMoney from "./pages/sendMoney.jsx"
 import Appbar from "./components/appbar.jsx"
 import Balancebar from "./components/balancebar.jsx"
 import Users from "./components/users.jsx"
+import SearchBar from "./components/searchbar.jsx"
 
 
   function App() {
 
     return (
+      
       <BrowserRouter>
      
         <Routes>
