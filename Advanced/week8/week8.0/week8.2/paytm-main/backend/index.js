@@ -8,6 +8,6 @@ app.use(express.json())
 app.use('/api/v1',apiRouter)
 
 
-app.listen(3001);
+app.listen(3000);
 
 
